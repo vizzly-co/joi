@@ -18,6 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - id: setup
+        run: |
+          npm install
+          cd browser && npm install
+
       - id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
