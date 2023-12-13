@@ -1,3 +1,6 @@
+A forked version of joi, that includes the full bundle in the browser version
+
+
 # joi
 
 #### The most powerful schema description language and data validator for JavaScript.

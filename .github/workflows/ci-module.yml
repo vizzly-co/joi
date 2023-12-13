@@ -11,5 +11,17 @@ permissions:
   contents: read #  for actions/checkout
 
 jobs:
-  test:
-    uses: hapijs/.github/.github/workflows/ci-module.yml@min-node-18-hapi-21
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - id: publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: "public"
+          tag: latest
+          package: ./browser/package.json
